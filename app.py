@@ -15,7 +15,8 @@ tf.compat.v1.reset_default_graph()  # Instead of tf.reset_default_graph()
 
 from tensorflow.keras.models import load_model
 
-model = load_model("model.h5", compile=False)  # Load without compiling
+model = load_model("model.h5", safe_mode=False)
+
 
 # Manually compile the model with metrics
 model.compile(optimizer="adam", loss="mse", metrics=["mae"])
